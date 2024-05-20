@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ETF Data</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>ETF Data Calculator</h1>
+  </header>
+  <div class="container">
+    <p class="description">Use this tool to calculate the future price and dividend yield of an ETF. Enter the ETF
+      ticker symbol and the number of years to project into the future.</p>
+    <form action="/get-etf-data" method="POST">
+      <label for="ticker">ETF Ticker:</label>
+      <input type="text" id="ticker" name="ticker" required>
+
+      <label for="years">Number of Years:</label>
+      <input type="number" id="years" name="years" min="1" required>
+
+      <button type="submit">Get ETF Data</button>
+    </form>
+  </div>
+  <footer>
+    <p>ETF Data Calculator, <a href='https:/rohan-patel.netlify.app' target="_blank">Rohan Patel</a></p>
+  </footer>
+</body>
+
+</html>
